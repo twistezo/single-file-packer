@@ -1,0 +1,24 @@
+{
+  "name": "single-file-packer",
+  "author": "twistezo",
+  "license": "MIT",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "babel-node src",
+    "build": "babel src --out-file lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twistezo/single-file-packer.git"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.10",
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "eslint": "^8.7.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
+  }
+}

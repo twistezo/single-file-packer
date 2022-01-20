@@ -1,0 +1,7 @@
+{
+  "presets": [["@babel/preset-env"]],
+  "generatorOpts": {
+    "minified": true,
+    "comments": false
+  }
+}
