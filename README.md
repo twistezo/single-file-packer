@@ -8,6 +8,10 @@ The main purpose is to have zero configuration build tool for compile multifile 
 
 - Node.js - https://nodejs.org/en/
 
+## Install
+
+To install packages use `npm install`.
+
 ## Usage
 
 - to build app use `npm run build`.
