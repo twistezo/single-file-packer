@@ -96,7 +96,7 @@ export class EurozetAds {
       // googletag.enableServices();
       // googletag.pubads().refresh();
     // });
-    console.log('Eurozet init().');
+    console.log('Eurozet init().', isAdServerEnabled, isSponsoredArticle, lazyLoad);
     return;
   }
 }
