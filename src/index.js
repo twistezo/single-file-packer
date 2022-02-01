@@ -1,6 +1,6 @@
 import { EurozetAds } from "./Adserver.js";
 
-window.zetads_configuration = {
+const zetads_configuration = {
     domain: "radiozet.pl",
     parentAdUnitCode: ["biznes", "konkursy", "player", "sport", "stronaglowna", "stylzycia", "wiadomosci", "zdrowie", "magazyn", "podroze"],
     lazyLoad: {
@@ -318,7 +318,7 @@ window.zetads_configuration = {
     }
 };
 
-window.googletag = window.googletag || { cmd: [] };
-window.Yieldbird = window.Yieldbird || { cmd: [] };
-window.zetads = window.zetads || EurozetAds;
-zetads.init(window.zetads_configuration);
+const googletag = googletag || { cmd: [] };
+const Yieldbird = Yieldbird || { cmd: [] };
+const zetads = zetads || EurozetAds;
+zetads.init(zetads_configuration);

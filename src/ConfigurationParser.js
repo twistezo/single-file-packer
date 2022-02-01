@@ -1,10 +1,14 @@
 export class ConfigurationParserService {
   static configuration;
   static parsedConfiguration = {
-    host: window.testOnLocalHost || window.location.host,
-    pathname: window.location.pathname,
-    pagetype: window._zet_type.toLowerCase() || 'default',
-    sponsorowane: window._zet_sponsorowane || '0',
+    // host: window.testOnLocalHost || window.location.host,
+    // pathname: window.location.pathname,
+    // pagetype: window._zet_type.toLowerCase() || 'default',
+    // sponsorowane: window._zet_sponsorowane || '0',
+    host: '0',
+    pathname: '0',
+    pagetype: '0',
+    sponsorowane: '0',
     urlConfig: 'default',
     lazyLoad: { fetchMarginPercent: 120, renderMarginPercent: -1, mobileScaling: 1.2 },
     adUnits: [],
@@ -110,26 +114,26 @@ export class ConfigurationParserService {
     return;
   }
 
-  static forcePrebidPage = () => {
-    const { pagetype } = this.parsedConfiguration;
-    try {
-      this.parsedConfiguration = {
-        ...this.parsedConfiguration,
-        prebidForcedPage: {
-          mobile: this.configuration.prebidForcedPage[pagetype]["mobile"],
-          desktop: this.configuration.prebidForcedPage[pagetype]["desktop"]
-        }
-      }
-      window.yb_configuration = window.yb_configuration || {};
-      if (window.innerWidth < 768) {
-        window.yb_configuration["forcedPage"] = this.configuration.prebidForcedPage[pagetype]["mobile"];
-      } else {
-        window.yb_configuration["forcedPage"] = this.configuration.prebidForcedPage[pagetype]["desktop"];
-      }
-    } catch (error) {
-      console.log("Couldn't force YB page. Check if it exist in configuration.");
-    }
-  }
+  // static forcePrebidPage = () => {
+  //   const { pagetype } = this.parsedConfiguration;
+  //   try {
+  //     this.parsedConfiguration = {
+  //       ...this.parsedConfiguration,
+  //       prebidForcedPage: {
+  //         mobile: this.configuration.prebidForcedPage[pagetype]["mobile"],
+  //         desktop: this.configuration.prebidForcedPage[pagetype]["desktop"]
+  //       }
+  //     }
+  //     window.yb_configuration = window.yb_configuration || {};
+  //     if (window.innerWidth < 768) {
+  //       window.yb_configuration["forcedPage"] = this.configuration.prebidForcedPage[pagetype]["mobile"];
+  //     } else {
+  //       window.yb_configuration["forcedPage"] = this.configuration.prebidForcedPage[pagetype]["desktop"];
+  //     }
+  //   } catch (error) {
+  //     console.log("Couldn't force YB page. Check if it exist in configuration.");
+  //   }
+  // }
 
   static init = (configuration) => {
     this.configuration = configuration;
@@ -141,7 +145,7 @@ export class ConfigurationParserService {
     this.replaceAdUnitPlaceholder();
     this.addAdUnitSizes();
     this.checkAdUnitsByPagetype();
-    this.forcePrebidPage();
+    // this.forcePrebidPage();
 
     return this.parsedConfiguration;
   }
